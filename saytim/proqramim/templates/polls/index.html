@@ -1,0 +1,13 @@
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'proqramim:etrafli' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Sual yoxdur</p>
+{% endif %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
